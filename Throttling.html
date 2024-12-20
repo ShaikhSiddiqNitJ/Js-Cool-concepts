@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="throttle">Click Me</button>
+    <script>
+        const btn = document.querySelector("#throttle");
+
+        // Throttling Function
+        const throttleFunction = (func, delay) => {
+
+            // Previously called time of the function
+            let prev = 0;
+            return (...args) => {
+                // Current called time of the function
+                let now = new Date().getTime();
+
+                // Logging the difference
+                // between previously 
+                // called and current called timings
+                console.log(now - prev, delay);
+
+                // If difference is greater
+                // than delay call
+                // the function again.
+                if (now - prev > delay) {
+                    prev = now;
+
+                    // "..." is the spread
+                    // operator here 
+                    // returning the function with the 
+                    // array of arguments
+                    return func(...args);
+                }
+            }
+        }
+        btn.addEventListener("click",
+            throttleFunction(() => {
+                console.log("button is clicked")
+            }, 1500));
+    </script>
+
+</body>
+
+</html>
+
+<!-- second problem -->
+
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>The mousemove Method</title> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+  
+    <!-- jQuery code to show the working of this method -->
+    <script> 
+        $(document).ready(function () { 
+            $("p").mousemove(function () { 
+                $("div").css("background-color", "lightgreen"); 
+            }); 
+        }); 
+    </script> 
+    <style> 
+        div { 
+            width: 380px; 
+            padding: 20px; 
+            height: 60px; 
+            border: 2px solid green; 
+            font-weight: bold; 
+            font-size: 20px; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    <div> 
+        <!-- move over this text to see the change -->
+        <p>Move over this paragraph.</p> 
+    </div> 
+</body> 
+  
+</html>
