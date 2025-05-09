@@ -529,3 +529,4 @@ String.prototype.mycharAt=function(index)
     return str[correctindex];
 }
 console.log(str.mycharAt(2))
+console.log("siddiq")
