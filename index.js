@@ -1,1 +1,1 @@
-console.lpog("3839854")
+console.log("3839854")
