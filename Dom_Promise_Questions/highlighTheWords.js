@@ -11,6 +11,7 @@ function highlight(str,keys)
          //prefix and suffix
          // not prefix and suffix
         //  prefix and suffix not
+        //final
 let ans=[]
  let s=new Set(keys) 
  let arr=str.split(" ")  
